@@ -1,14 +1,15 @@
 .mainBody{
-    background: #7B904B ;
+    background: rgb(197, 224, 238);
 }
 
 .theCalculator{
-    border: 2px solid black;
+    border: 5px solid rgb(86, 84, 84);
     width: 350px;
     margin: 0auto;
     height: 400px;
     padding-top: 25px;
-    background-color: #2C514C;
+    background-color: #666d6e;
+    border-radius: 20px;
 }
 
 .calculatorDiv{
@@ -16,14 +17,20 @@
     grid-template-columns: repeat(3, 1fr);
     margin: 0 auto;
     width: 300px;
+    
 
 }
 #calculationField{
     border: 2px solid black;
+    border-radius: 15px;
     font-family: 'Courier New', Courier, monospace;
-    background-color: #F5F9E9;
+    background-color: black;
     width: 300px;
     margin: 0 auto;
+    min-height: 100px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    word-wrap: break-all;
 }   
 
 .buttons{
@@ -33,5 +40,35 @@
 }
 #textInField{
     font-size: 25px;
+    color: aqua;
+    font-family: 'Courier New', Courier, monospace;
 
+}
+
+.operatorClear{
+    grid-column: span 3;
+    background-color: rgb(194, 131, 100)
+}
+
+.plusOperator,
+.minusOperator,
+.divideOperator,
+.operatorEqualSign,
+.multiplyOperator {
+    background-color: gray;
+}
+
+.digit{
+    background-color: lightgray;
+}
+
+.header{
+    color: white;
+    background: gray;
+    width: 300px;
+    text-align: center;
+    margin-left: 20px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    
 }

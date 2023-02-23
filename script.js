@@ -1,67 +1,26 @@
+let allButtons = document.querySelectorAll('.buttons');
+let screenDisplay = document.querySelector('#calculationField');
+let textOnScreen = document.querySelector('#textInField');
 
-/* inputs */
-let userInput1 = 4;
-let userInput2 = 4;
-let userOperator = '/';
+allButtons.forEach(button => button.addEventListener('click', () => calculate(button)));
 
+let calculation = [];
+let accumlulativeCalculation;
 
-/* functions for calculations with operators */
-function multiply (numb1, numb2){
-    let calculation = numb1 * numb2;
-    return calculation;
-}
-
-function add (numb1, numb2){
-    let calculation = numb1 + numb2;
-    return calculation;
-}
-
-function substract (numb1, numb2){
-    let calculation = numb1 - numb2;
-    return calculation;
-}
-
-function divide (numb1, numb2){
-    let calculation = numb1 / numb2;
-    return calculation;
-}
-
-/* Main operate function */
-function operate (operator, numb1, numb2){
-    if (operator == '*'){
-        finalCalculation =multiply(numb1, numb2);
-    } 
-    else if (operator == '+'){
-        finalCalculation = add(numb1, numb2);
+function calculate (button){
+    const value = button.textContent;
+    if (value == 'Clear'){
+        calculation = [];
+        textOnScreen.textContent = '.';
+    } else if (value == "="){
+        textOnScreen.textContent = eval(accumlulativeCalculation);
+        //textOnScreen.textContent = accumlulativeCalculation;
+    }else {
+        calculation.push(value);
+        accumlulativeCalculation = calculation.join('');
+        textOnScreen.textContent = accumlulativeCalculation;
+        console.log(accumlulativeCalculation);
     }
-    else if (operator == '-'){
-        finalCalculation = substract(numb1, numb2);
-    }
-    else if (operator == '/'){
-        finalCalculation = divide(numb1, numb2);
-    }
-    return finalCalculation;
+
+
 }
-
-/* output */
-console.log(operate(userOperator, userInput1, userInput2));
-console.log(finalCalculation);
-
-
-
-
-let digitOne = document.querySelector('.digitOne');
-
-digitOne.addEventListener('click', function(){
-    displayValue += "1";
-    console.log(displayValue);
-    return displayValue;
-})
-
-let displayValue = "0";
-
-
-let fieldNumber = document.querySelector('#textInField');
-fieldNumber.textContent = displayValue;
-
-//**note to self = arrays? */
