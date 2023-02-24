@@ -22,5 +22,4 @@ function calculate (button){
         console.log(accumlulativeCalculation);
     }
 
-
 }
